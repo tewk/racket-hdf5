@@ -22,10 +22,10 @@
  * 	if((dset = H5Dopen2(file, name)) < 0)
  *	    fprintf(stderr, "unable to open the requested dataset\n");
 |#
-(define herr_t _int)
+(define herr_t _int64)
 
 ;; Type of atoms to return to users
-(define hid_t _int)
+(define hid_t _int64)
 
 
 #|

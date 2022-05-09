@@ -21,7 +21,7 @@
 (define H5L_MAX_LINK_NAME_LEN (cast -1 _int32 _uint32))  ;; (4GB - 1)
 
 ;; Macro to indicate operation occurs on same location
-(define H5L_SAME_LOC (cast 0 _int32 hid_t))
+(define H5L_SAME_LOC (cast 0 _int64 hid_t))
 
 ;; Current version of the H5L_class_t struct
 (define H5L_LINK_CLASS_T_VERS 0)

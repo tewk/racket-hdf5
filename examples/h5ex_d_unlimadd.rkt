@@ -59,20 +59,26 @@
 * Create dataspace with unlimited dimensions.
 |#
 (define maxdims (list H5S_UNLIMITED H5S_UNLIMITED))
-(define space (H5Screate_simple 2 dims maxdims))
-
+(define space (H5Screate_simple dims maxdims))
 #|
 * Create the dataset creation property list, and set the chunk
 * size.
 |#
+;(printf "H5P_DATASET_CREATE: ~a~n" (number->string H5P_DATASET_CREATE 16))
 (define dcpl (H5Pcreate H5P_DATASET_CREATE))
+;(displayln (format "dcpl ~a" (number->string dcpl 16)))
 (define status (H5Pset_chunk dcpl chunk))
 
 #|
 * Create the unlimited dataset.
 |#
-(define dset (H5Dcreate fid DATASET H5T_STD_I32LE space H5P_DEFAULT dcpl
-                        H5P_DEFAULT))
+;(displayln (format "fid ~a" (number->string fid 16)))
+;(displayln (format "space ~a" (number->string space 16)))
+;(displayln (format "status ~a" status))
+;;(displayln (format "H5T_STD_I32LE ~a" (number->string H5T_STD_I32LE 16)))
+;(displayln (format "H5P_DEFAULT ~a" (number->string H5P_DEFAULT 16)))
+(define dset (H5Dcreate fid DATASET H5T_STD_I32LE space H5P_DEFAULT dcpl H5P_DEFAULT))
+;(displayln (format "DATASET ID ~a" dset))
 
 #|
 * Write the data to the dataset.

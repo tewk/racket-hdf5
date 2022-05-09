@@ -18,7 +18,7 @@
 
 
 #| Value for the default error stack |#
-(define H5E_DEFAULT    (cast 0 _int hid_t))
+(define H5E_DEFAULT    (cast 0 _int64 hid_t))
 
 #| Different kinds of error information |#
 (define H5E_type_t

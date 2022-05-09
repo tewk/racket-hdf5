@@ -185,7 +185,7 @@
         (buf : _pointer)
         -> (status : herr_t)
         -> (when (< status 0)
-             (error 'H5Dwrite "Failed to write dataset."))))
+             (error 'H5Dwrite "Failed to write dataset. ec: ~a" status))))
 
 
 (define-hdf5 H5Diterate
