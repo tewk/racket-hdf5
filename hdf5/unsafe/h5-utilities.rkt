@@ -28,9 +28,11 @@
             (define-c name args ...))]))
 
 (define hdf5-directories
-  (list (expand-user-path "~/scoop/apps/msys2/current/ucrt64/lib")
-	(expand-user-path "~/cf/master/conda_deps/lib/")
-	(expand-user-path "~/cf/master/deps/petsc/lib/")
+  (define home-dir () (
+    (if (equal? (system-type 'os) 'windows) (cleanse-path (getenv "USERPROFILE")) (expand-user-path "~"))))
+  (list (build-path (home-dir) "scoop" "apps" "msys2" "current" "ucrt64" "lib")
+	(build-path (home-dir) "cf" "master" "conda_deps" "lib")
+	(build-path (home-dir) "cf" "master" "deps" "petsc" "lib")
 	"/usr/local/opt/hdf5/lib"
 	"/usr/lib/x86_64-linux-gnu/hdf5/openmpi/"
         "/usr/lib/x86_64-linux-gnu/"
