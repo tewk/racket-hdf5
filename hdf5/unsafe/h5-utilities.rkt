@@ -28,7 +28,9 @@
             (define-c name args ...))]))
 
 (define hdf5-directories
-  (list (expand-user-path "~/cf/master/deps/petsc/lib/")
+  (list (expand-user-path "~/scoop/apps/msys2/current/ucrt64/lib")
+	(expand-user-path "~/cf/master/conda_deps/lib/")
+	(expand-user-path "~/cf/master/deps/petsc/lib/")
 	"/usr/local/opt/hdf5/lib"
 	"/usr/lib/x86_64-linux-gnu/hdf5/openmpi/"
         "/usr/lib/x86_64-linux-gnu/"
