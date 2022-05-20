@@ -31,7 +31,7 @@
   (if (equal? (system-type 'os) 'windows) (cleanse-path (getenv "USERPROFILE")) (expand-user-path "~")))
 
 (define hdf5-directories
-  (list (build-path home-dir "scoop" "apps" "msys2" "current" "ucrt64" "lib")
+  (list (build-path home-dir "scoop" "apps" "msys2" "current" "ucrt64" "lib" "libhdf5.dll.a")
 	(build-path home-dir "cf" "master" "conda_deps" "lib")
 	(build-path home-dir "cf" "master" "deps" "petsc" "lib")
 	"/usr/local/opt/hdf5/lib"
@@ -39,6 +39,8 @@
         "/usr/lib/x86_64-linux-gnu/"
         "/usr/lib/x86_64-linux-gnu/hdf5/serial/"
         ))
+
+(displayln hdf5-directories)
 
 (define hdf5-lib (ffi-lib "libhdf5"
                           #:get-lib-dirs
