@@ -8,9 +8,9 @@
 
 (provide (all-defined-out))
 
-(define hsize_t _ulong)
-(define hssize_t _long)
-(define haddr_t _ulong)
+(define hsize_t _uint64)
+(define hssize_t _sint64)
+(define haddr_t _uint64)
 
 #|
  * Status return values.  Failed integer functions in HDF5 result almost
